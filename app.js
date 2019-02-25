@@ -9,8 +9,15 @@ function getJokes(e) {
 
   xhr.onload = function() {
     if(this.status === 200) {
-      const response = this.responseText;
-      console.log(response);
+      const response = JSON.parse(this.responseText);
+      
+      let output = '';
+      
+      if(response.type === 'success') {
+
+      } else {
+        output += '<li>Something went wrong</li>'
+      }
     }
   }
 
